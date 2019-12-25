@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mortgage Calculator</title>
+	<link rel="stylesheet" type="text/css" href="mortgageStyles.css">
+</head>
+<body>
+
+<h1>Mortgage Calculator</h1>
+<p>
+	Calculate the value of the mortgage. The price of the house is:
+</p>
+<p>
+	$1,500,000
+</p>
+<p>
+	Down payment: <span id="downPay"></span>
+</p>
+<p>
+	Down payment required: <span id="dispDonwPaymentRequired"></span>
+</p>
+<p id="downPaymentCheck">
+
+</p>
+<p>
+	Loan amount: <span id="dispLoan"></span>
+</p>
+<p>
+	Mortgage term: <span id="dispTerm"></span> years
+</p>
+<p>
+	Monthly morgage amount: <span id="dispMortgageAmount"></span>
+</p>
+<p>
+	Total morgage amount with interest: <span id="dispTotalMortgage"></span>
+</p>
+<p>
+	You need to make: <span id="dispYearlyPay"></span> per year in order to qualify for a mortgage.
+</p>
+<script type="text/javascript">
+	
+// Total price of the house 
+var housePrice = 350000; 
+
+// Amount of Down Payment 
+var downPayment = 80000;
+
+// Term of mortgage in years 
+var mortgageTerm = 30; 
+
+// Number of months in a year 
+var months = 12; 
+
+// Interest rate for montly payments 
+var interestRate = 0.05; 
+
+// Subtracts the down payment from the house price to get the loan amount 
+var loanAmount = housePrice - downPayment
+
+// Displays the down payment to the browser 
+document.getElementById("downPay").innerHTML = "$" + downPayment; 
+
+// Displays the loan amount to the browser 
+document.getElementById("dispLoan").innerHTML = "$" + loanAmount; 
+
+// Displays mortgage term 
+document.getElementById("dispTerm").innerHTML = mortgageTerm; 
+
+// Multiplies the mortgage term and months in a year to get total amount of payments 
+var totalPayments = mortgageTerm * months; 
+
+// Divides the loan amount by the total payments to get monthly mortgage amount 
+var monthlyMortgage = loanAmount / totalPayments; 
+
+// Displays montly morgage 
+document.getElementById("dispMortgageAmount").innerHTML = "$" + monthlyMortgage; 
+
+// Calculates monthly morgage amount with interest rage 
+var mortgageInterest = monthlyMortgage * interestRate; 
+var totalMorgage = mortgageInterest + monthlyMortgage; 
+
+// Displays monthly mortgage with interest
+document.getElementById("dispTotalMortgage").innerHTML = "$" + totalMorgage;
+
+// Calculates the required yearly pay in order to get mortgage 
+var requiredYearlyPay = totalMorgage * months * 3; 
+
+// Displays required yearly pay 
+document.getElementById("dispYearlyPay").innerHTML = "$" + requiredYearlyPay; 
+
+// Down payment amount required 
+var downPaymentRequired = housePrice * 0.2; 
+
+// Displays down payment required 
+document.getElementById("dispDonwPaymentRequired").innerHTML = "$" + downPaymentRequired
+
+if (downPayment >= housePrice * 0.2) {
+	document.getElementById("downPaymentCheck").innerHTML = "You have put above the 20 percent down payment required."; 
+} else {
+	document.getElementById("downPaymentCheck").innerHTML = "You need to put at least 20 percent of the requiered down payment."; 
+}
+
+</script>
+</body>
+</html>
