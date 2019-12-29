@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<title>Enter Grades</title>
+
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<h1>
+		Enter Grades for Students
+	</h1>
+		<p>
+			Select Term:
+		</p>
+		<select>
+			<option>Fall 2019</option>
+			<option disabled>Winter 2020</option>
+			<option disabled>Spring 2020</option>
+			<option disabled>Summer 2020</option>
+			<option disabled>Fall 2020</option>
+		</select>
+		<p>
+			Select Course:
+		</p>
+		<select>
+			<option>Beginning Biology</option>
+			<option disabled>Advanced Biology</option>
+		</select>
+		<p class="textComment">
+			<em class="warning">
+				* Please note that Advanced Biology is only available during the Spring semester
+			</em>
+		</p>
+		<p>
+			Select student:
+		</p>
+		<select>
+			<option>Bill Smith</option>
+			<option>Tom Wilson</option>
+			<option>Jill Burns</option>
+			<option>Jack Brown</option>
+			<option>Cindy Harris</option>
+			<option>Daniela Ramirez</option>
+			<option>Thomas Lee</option>
+			<option>Chris Topher</option>
+			<option>Richard Burr</option>
+			<option>Anna Frost</option>
+			<option>David King</option>
+			<option>Emily Richards</option>
+		</select><br>
+		<p>
+			Select Grade:
+		</p>
+		<select>
+			<option>A+</option>
+			<option>A</option>
+			<option>A-</option>
+			<option>B+</option>
+			<option>B</option>
+			<option>B-</option>
+			<option>C+</option>
+			<option>C</option>
+			<option>C-</option>
+			<option>D+</option>
+			<option>D</option>
+			<option>D-</option>
+			<option>F</option>
+			<option>I</option>
+		</select>
+		<p class="textComment">
+			<em class="warning">
+				* Students must get a C or above to enroll in Advanced Biology
+			</em>
+		</p>
+		
+		<input type = "text" id="textInput">
+		<button id="textChange">
+			Enter Comment
+		</button>
+		<p id="newText" class="textComment">
+			
+		</p>
+		<input type="submit" value="Submit Grade" class="btn">
+
+<script src="app.js"></script>
+</body>
+</html>
